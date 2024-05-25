@@ -19,7 +19,6 @@ class CurrentLocationController extends GetxController {
         if (currentPosition != null) {
           cityName.value = "";
           getCurrentWeather(currentPosition!.latitude, currentPosition!.longitude);
-
         }
       }
     }
@@ -38,7 +37,6 @@ class CurrentLocationController extends GetxController {
     weatherController.autoComplete.clear();
     if(cityName.value != "Unknown"){
       await weatherController.weatherAPI(city: cityName.value);
-
     }
   }
 
@@ -65,7 +63,6 @@ class CurrentLocationController extends GetxController {
           'Location permissions are denied',
           style: GoogleFonts.quicksand(fontSize: 14.0, fontWeight: FontWeight.w700, color: Colors.white),
         )));
-
         return false;
       }
     }
@@ -75,7 +72,6 @@ class CurrentLocationController extends GetxController {
         'Location permissions are permanently denied, we cannot request permissions.',
         style: GoogleFonts.quicksand(fontSize: 14.0, fontWeight: FontWeight.w700, color: Colors.white),
       )));
-
       return false;
     }
     return true;

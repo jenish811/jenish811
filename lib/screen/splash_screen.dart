@@ -26,8 +26,8 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   void _initAnimations() {
     _slideController = AnimationController(vsync: this, duration: const Duration(seconds: 4));
     _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, 1), // Start from the bottom
-      end: const Offset(0, 0), // End at the top
+      begin: const Offset(0, 1),
+      end: const Offset(0, 0),
     ).animate(CurvedAnimation(
       parent: _slideController,
       curve: Curves.fastOutSlowIn,
@@ -49,9 +49,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      backgroundColor: Colors.blue
-        ,
+      backgroundColor: Colors.blue,
       body: Center(
         child: AnimatedBuilder(
           animation: _slideController,
